@@ -17,7 +17,7 @@ int main(int argc, char** argv)
   spinner.start();
 
   // Create the hardware interface specific to your robot
-  boost::shared_ptr<dynamixel_ros_control::DynamixelHWInterface> dynamixel_hw_interface(
+  std::shared_ptr<dynamixel_ros_control::DynamixelHWInterface> dynamixel_hw_interface(
       new dynamixel_ros_control::DynamixelHWInterface(nh));
   dynamixel_hw_interface->init();
 
