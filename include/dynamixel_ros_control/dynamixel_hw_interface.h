@@ -16,7 +16,10 @@ public:
 
   virtual void enforceLimits(ros::Duration& period);
 
-private:
+  void torqueOff();
+
+  void torqueOn();
+protected:
   // Dynamixel Workbench Parameters
   DynamixelWorkbench* dxl_wb_;
   std::vector<uint8_t> dynamixel_ids_;

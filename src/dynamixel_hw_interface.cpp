@@ -158,4 +158,24 @@ void DynamixelHWInterface::enforceLimits(ros::Duration& period)
   // ----------------------------------------------------
 }
 
+void DynamixelHWInterface::torqueOn()
+  {
+    for (const uint8_t id : dynamixel_ids_)
+    {
+
+      ROS_INFO_NAMED("dynamixel_hw_interface", "TORQUE ON for dynamixel id=%u ", id);
+      dxl_wb_->torqueOn(id);
+    
+    }
+  }
+  void DynamixelHWInterface::torqueOff()
+  {
+      for (const uint8_t id : dynamixel_ids_)
+    {
+
+      ROS_INFO_NAMED("dynamixel_hw_interface", "TORQUEOFF for dynamixel id=%u ", id);
+      dxl_wb_->torqueOff(id);
+    }
+  }
+
 }  // namespace
